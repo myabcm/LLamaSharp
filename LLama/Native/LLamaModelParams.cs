@@ -33,7 +33,7 @@ namespace LLama.Native
         /// called with a progress value between 0 and 1, pass NULL to disable. If the provided progress_callback
         /// returns true, model loading continues. If it returns false, model loading is immediately aborted.
         /// </summary>
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 && !NET6_0_OR_GREATER
         // this code is intended to be used when running LlamaSharp on NET Framework 4.8 (NET Standard 2.0) 
         // as NET Framework 4.8 does not play nice with the LlamaProgressCallback type
         public IntPtr progress_callback;
